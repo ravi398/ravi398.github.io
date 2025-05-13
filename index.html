@@ -1,69 +1,95 @@
 <!DOCTYPE html>
-<html>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/inspire">
-<link rel="stylesheet" href="http://inspirehep.net/record/2030072">
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name | GitHub Page</title>
+
+  <!-- Use W3.CSS for simplicity -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <!-- Custom Style -->
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+    }
+    .mySlides {
+      display: none;
+    }
+    footer a {
+      margin: 0 10px;
+      color: white;
+    }
+    footer a:hover {
+      color: #ccc;
+    }
+  </style>
+</head>
+
 <body>
 
 <!-- Navigation -->
-<nav class="w3-bar w3-black">
-  <a href="#home" class="w3-button w3-bar-item">Home</a>
-  <a href="#Research" class="w3-button w3-bar-item">Research</a>
-  <a href="#CV" class="w3-button w3-bar-item">CV</a>
-  <a href="#contact" class="w3-button w3-bar-item">Contact</a>
+<nav class="w3-bar w3-black w3-padding">
+  <a href="#home" class="w3-bar-item w3-button">Home</a>
+  <a href="#research" class="w3-bar-item w3-button">Research</a>
+  <a href="#cv" class="w3-bar-item w3-button">CV</a>
+  <a href="#contact" class="w3-bar-item w3-button">Contact</a>
 </nav>
 
 <!-- Slide Show -->
-<section>
-  <img class="mySlides" src="abc.jpeg"
-  style="width:100%">
-  <img class="mySlides" src="abc1.jpeg"
-  style="width:100%">
-  <img class="mySlides" src="abc2.jpeg"
-  style="width:100%">
+<section id="home" class="w3-container w3-center w3-padding-32">
+  <img class="mySlides" src="abc.jpeg" style="width:100%" alt="Slide 1" />
+  <img class="mySlides" src="abc1.jpeg" style="width:100%" alt="Slide 2" />
+  <img class="mySlides" src="abc2.jpeg" style="width:100%" alt="Slide 3" />
 </section>
 
-<!-- Research Interest -->
-<section class="w3-container w3-center w3-content" style="max-width:600px">
+<!-- Research Interests -->
+<section id="research" class="w3-container w3-center w3-content" style="max-width:700px">
   <h2 class="w3-wide">Research Interests</h2>
   <p class="w3-opacity"><i>Universe Evolution</i></p>
-  <p class="w3-justify">I am interested in studying the neutrino physics and theortical Cosmology.</p>
+  <p class="w3-justify">
+    I am interested in studying neutrino physics and theoretical cosmology.
+    My focus includes early universe models and their implications for current and future experiments.
+  </p>
 </section>
 
+<!-- CV Section Placeholder -->
+<section id="cv" class="w3-container w3-content w3-padding-32" style="max-width:700px">
+  <h2 class="w3-wide w3-center">Curriculum Vitae</h2>
+  <p class="w3-center">Download my <a href="your-cv.pdf" target="_blank">CV here</a>.</p>
+</section>
 
+<!-- Contact Section -->
+<section id="contact" class="w3-container w3-content w3-padding-32" style="max-width:700px">
+  <h2 class="w3-wide w3-center">Contact</h2>
+  <p class="w3-center">Feel free to reach out via <a href="mailto:your.email@example.com">email</a>.</p>
 </section>
 
 <!-- Footer -->
 <footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
-  <a href="#"><i class="fa fa-facebook-official"></i></a>
-  <a href="#"><i class="fa fa-pinterest-p"></i></a>
-  <a href="#"><i class="fa fa-twitter"></i></a>
-  <a href="#"><i class="fa fa-flickr"></i></a>
-  <a href="#"><i class="fa fa-linkedin"></i></a>
-  <p class="w3-medium">
-  other links <a href="http://inspirehep.net/record/2030072" target="_blank">inspire</a>
-  </p>
+  <a href="#"><i class="fab fa-facebook"></i></a>
+  <a href="#"><i class="fab fa-twitter"></i></a>
+  <a href="#"><i class="fab fa-linkedin"></i></a>
+  <a href="http://inspirehep.net/record/2030072" target="_blank" class="w3-medium">InspireHEP</a>
 </footer>
 
+<!-- Slideshow Script -->
 <script>
-// Automatic Slideshow - change image every 3 seconds
-var myIndex = 0;
-carousel();
-
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
+  let myIndex = 0;
+  carousel();
+  function carousel() {
+    const slides = document.getElementsByClassName("mySlides");
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > slides.length) { myIndex = 1 }
+    slides[myIndex - 1].style.display = "block";
+    setTimeout(carousel, 3000); // Change image every 3 seconds
   }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}
-  x[myIndex-1].style.display = "block";
-  setTimeout(carousel, 3000);
-}
 </script>
 
 </body>
 </html>
-
